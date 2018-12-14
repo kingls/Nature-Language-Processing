@@ -1,0 +1,11 @@
+import jieba
+import wordcloud as wd
+target = open("D:/ABC.txt","r",encoding="utf-8")
+text = text.read()
+target.close()
+textcut = jieba.lcut(text)
+result = " ".join(textcut)
+clould = wd.WordCloud(  background_color="white",
+        font_path="msyhbd.ttf",height = 700,width = 1000)
+clould.generate(result)
+clould.to_file("wordcloud.png")
